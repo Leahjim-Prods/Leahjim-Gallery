@@ -1,38 +1,619 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#090D14">
-<meta name="description" content="Portafolio fotográfico y cinematográfico de Leahjim Prods.">
-<title>Leahjim Prods — Historias que merecen ser recordadas</title>
-<link rel="stylesheet" href="css/styles.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#090D14">
+
+    <meta name="description" content="Portafolio fotográfico y cinematográfico de Leahjim Prods.">
+
+    <title>Leahjim Prods — Historias que merecen ser recordadas</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
-<header class="top"><a class="logo" href="#" onclick="home();return false"><span class="logo-mark">L</span><span>LEAHJIM PRODS<small>PHOTOGRAPHY & FILM</small></span></a><nav class="nav"><a href="#" onclick="home();return false">Inicio</a><a href="#" onclick="category('bautizos');return false">Bautizos & Cumpleaños</a><a href="#" onclick="category('quince');return false">15 años</a><a href="#" onclick="category('bodas');return false">Matrimonios</a><a class="contact" href="mailto:hola@leahjimprods.com">Contacto</a></nav><button class="menu" onclick="document.getElementById('mobileNav').style.display=document.getElementById('mobileNav').style.display==='block'?'none':'block'">☰</button></header>
-<div id="mobileNav" style="display:none;padding:15px 22px;background:white;position:sticky;top:65px;z-index:15;border-bottom:1px solid #ddd"><p><a href="#" onclick="home();return false">Inicio</a></p><p><a href="#" onclick="category('bautizos');return false">Bautizos & Cumpleaños</a></p><p><a href="#" onclick="category('quince');return false">15 años</a></p><p><a href="#" onclick="category('bodas');return false">Matrimonios</a></p></div>
-<main>
-<section id="home" class="view active">
-<div class="hero"><div class="hero-inner"><div class="kicker">Fotografía · Cinematografía · Historias reales</div><h1 class="serif">Historias que<br>merecen ser<br>recordadas.</h1><p>Convertimos momentos únicos en recuerdos que permanecen. Explora una selección de nuestras historias y descubre nuestra forma de contar cada celebración.</p><button class="outline" onclick="document.getElementById('categories').scrollIntoView({behavior:'smooth'})">Explorar portafolio&nbsp; ↘</button></div></div>
-<div class="intro"><div class="kicker">LEAHJIM PRODS</div><h2 class="serif">Cada historia tiene su propia luz.</h2><p>Desde la emoción de un bautizo hasta la magia de una boda, creamos fotografías y películas con sensibilidad, intención y atención a cada detalle.</p></div>
-<div class="categories" id="categories"><div class="section-top"><div><div class="kicker">NUESTRO PORTAFOLIO</div><h2 class="serif">Explora nuestras historias</h2></div><span style="font-size:11px;color:#7b8491">03 CATEGORÍAS</span></div><div class="cat-grid">
-<div class="cat" onclick="category('bautizos')"><img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=900&q=85"><div class="cat-copy"><span>Celebraciones familiares</span><h3 class="serif">Bautizos & cumpleaños</h3><p>Pequeños momentos, recuerdos inmensos.</p><b>Ver galerías&nbsp; ↗</b></div></div>
-<div class="cat" onclick="category('quince')"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=85"><div class="cat-copy"><span>Una nueva etapa</span><h3 class="serif">15 años</h3><p>Una noche, una historia para siempre.</p><b>Ver galerías&nbsp; ↗</b></div></div>
-<div class="cat" onclick="category('bodas')"><img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=900&q=85"><div class="cat-copy"><span>Historias de amor</span><h3 class="serif">Matrimonios</h3><p>La emoción de un día irrepetible.</p><b>Ver galerías&nbsp; ↗</b></div></div>
-</div></div>
-<div class="portfolio-band"><div><div class="kicker">IMÁGENES QUE CUENTAN</div><h2 class="serif">No solo documentamos momentos. Contamos historias.</h2><p>Fotografía y video con una mirada cuidada, narrativa y cinematográfica. Cada evento merece una galería propia, pensada para revivirlo una y otra vez.</p></div><div class="band-image"></div></div>
-</section>
-<section id="category" class="view"><div class="subhero"><button class="crumb" onclick="home()">← Volver al inicio</button><div class="kicker" id="catKicker">PORTAFOLIO</div><h1 class="serif" id="catTitle">Bautizos & cumpleaños</h1><p id="catDesc"></p></div><div class="event-section"><div class="section-top"><div><div class="kicker">HISTORIAS DESTACADAS</div><h2 class="serif">Cada evento, una historia.</h2></div><span style="font-size:11px;color:#7b8491" id="eventCount"></span></div><div class="event-grid" id="eventGrid"></div></div></section>
-<section id="detail" class="view"><div class="detail-hero" id="detailHero"><img id="detailCover" src="" alt=""><div class="detail-copy"><button class="crumb" style="color:#dce8ff" onclick="backCategory()">← Volver a la categoría</button><div class="kicker" id="detailKicker">HISTORIA DESTACADA</div><h1 class="serif" id="detailTitle"></h1><p id="detailSub"></p></div></div><div class="detail-body"><p class="detail-description" id="detailDesc"></p><div class="section-top"><div><div class="kicker">SELECCIÓN FOTOGRÁFICA</div><h2 class="serif">Momentos de la historia</h2></div></div><div class="gallery-grid" id="photoGrid"></div><div class="video-feature"><div class="video-poster" id="videoPoster"><button class="play" onclick="videoNotice()">▶</button></div><div class="video-copy"><div class="kicker">CINEMATOGRAFÍA</div><h3 class="serif">La historia en movimiento.</h3><p>Una mirada audiovisual para volver a sentir cada instante. Aquí se mostrarán los videos destacados de esta producción.</p></div></div></div></section>
-</main><footer class="footer"><span>© LEAHJIM PRODS · AREQUIPA, PERÚ</span><span>PHOTOGRAPHY & FILM · HECHO CON INTENCIÓN</span></footer>
 
-<div class="private-overlay" id="categoryModal"><div class="private-box">
-<button class="close" type="button" aria-label="Cerrar ventana" onclick="closeCategory()">×</button>
-<div class="kicker">ACCESO A PORTAFOLIO</div>
-<h2 class="serif" id="categoryLockTitle">Galería protegida.</h2>
-<p id="categoryLockText">Ingresa el código que recibiste junto con tu paquete.</p>
-<input id="categoryCode" type="password" inputmode="numeric" placeholder="Código de acceso">
-<button onclick="unlockCategory()">Entrar a la carpeta</button>
-<p id="categoryError" style="color:#b34b5e;display:none">El código no es correcto. Verifica e inténtalo nuevamente.</p>
-</div></div>
+    <!-- ==============================
+         ENCABEZADO Y NAVEGACIÓN
+    =============================== -->
 
-<div class="private-overlay" id="privateModal"><div class="private-box"><button class="close" type="button" aria-label="Cerrar ventana" onclick="closePrivate()">×</button><div class="kicker">GALERÍA PRIVADA</div><h2 class="serif">Un recuerdo solo para ti.</h2><p>Esta galería está protegida. Ingresa el código de acceso que te compartió Leahjim Prods.</p><input id="privateCode" type="password" placeholder="Código de acceso"><button onclick="unlock()">Ver galería</button><p id="privateError" style="color:#b34b5e;display:none">Código incorrecto. Inténtalo nuevamente.</p></div></div>
-<script src="js/main.js" defer></script></body></html>
+    <header class="top">
+
+        <a class="logo" href="#" onclick="home(); return false">
+
+            <span class="logo-mark">L</span>
+
+            <span>
+                LEAHJIM PRODS
+                <small>PHOTOGRAPHY & FILM</small>
+            </span>
+
+        </a>
+
+        <nav class="nav">
+
+            <a href="#" onclick="home(); return false">
+                Inicio
+            </a>
+
+            <a href="#" onclick="category('bautizos'); return false">
+                Bautizos & Cumpleaños
+            </a>
+
+            <a href="#" onclick="category('quince'); return false">
+                15 años
+            </a>
+
+            <a href="#" onclick="category('bodas'); return false">
+                Matrimonios
+            </a>
+
+            <a class="contact" href="mailto:hola@leahjimprods.com">
+                Contacto
+            </a>
+
+        </nav>
+
+        <button class="menu"
+            onclick="document.getElementById('mobileNav').style.display =
+            document.getElementById('mobileNav').style.display === 'block'
+            ? 'none' : 'block'">
+            ☰
+        </button>
+
+    </header>
+
+
+    <!-- ==============================
+         MENÚ PARA MÓVILES
+    =============================== -->
+
+    <div id="mobileNav"
+        style="display:none; padding:15px 22px; background:white;
+        position:sticky; top:65px; z-index:15;
+        border-bottom:1px solid #ddd">
+
+        <p>
+            <a href="#" onclick="home(); return false">
+                Inicio
+            </a>
+        </p>
+
+        <p>
+            <a href="#" onclick="category('bautizos'); return false">
+                Bautizos & Cumpleaños
+            </a>
+        </p>
+
+        <p>
+            <a href="#" onclick="category('quince'); return false">
+                15 años
+            </a>
+        </p>
+
+        <p>
+            <a href="#" onclick="category('bodas'); return false">
+                Matrimonios
+            </a>
+        </p>
+
+    </div>
+
+
+    <!-- ==============================
+         CONTENIDO PRINCIPAL
+    =============================== -->
+
+    <main>
+
+
+        <!-- ==============================
+             PÁGINA DE INICIO
+        =============================== -->
+
+        <section id="home" class="view active">
+
+            <!-- PORTADA PRINCIPAL -->
+
+            <div class="hero">
+
+                <div class="hero-inner">
+
+                    <div class="kicker">
+                        Fotografía · Cinematografía · Historias reales
+                    </div>
+
+                    <h1 class="serif">
+                        Historias que<br>
+                        merecen ser<br>
+                        recordadas.
+                    </h1>
+
+                    <p>
+                        Convertimos momentos únicos en recuerdos que permanecen.
+                        Explora una selección de nuestras historias y descubre
+                        nuestra forma de contar cada celebración.
+                    </p>
+
+                    <button class="outline"
+                        onclick="document.getElementById('categories').scrollIntoView({behavior:'smooth'})">
+
+                        Explorar portafolio ↘
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- INTRODUCCIÓN -->
+
+            <div class="intro">
+
+                <div class="kicker">
+                    LEAHJIM PRODS
+                </div>
+
+                <h2 class="serif">
+                    Cada historia tiene su propia luz.
+                </h2>
+
+                <p>
+                    Desde la emoción de un bautizo hasta la magia de una boda,
+                    creamos fotografías y películas con sensibilidad,
+                    intención y atención a cada detalle.
+                </p>
+
+            </div>
+
+
+            <!-- CATEGORÍAS DEL PORTAFOLIO -->
+
+            <div class="categories" id="categories">
+
+                <div class="section-top">
+
+                    <div>
+
+                        <div class="kicker">
+                            NUESTRO PORTAFOLIO
+                        </div>
+
+                        <h2 class="serif">
+                            Explora nuestras historias
+                        </h2>
+
+                    </div>
+
+                    <span style="font-size:11px; color:#7b8491">
+                        03 CATEGORÍAS
+                    </span>
+
+                </div>
+
+
+                <div class="cat-grid">
+
+
+                    <!-- BAUTIZOS Y CUMPLEAÑOS -->
+
+                    <div class="cat" onclick="category('bautizos')">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=900&q=85"
+                            alt="Bautizos y cumpleaños">
+
+                        <div class="cat-copy">
+
+                            <span>
+                                Celebraciones familiares
+                            </span>
+
+                            <h3 class="serif">
+                                Bautizos & cumpleaños
+                            </h3>
+
+                            <p>
+                                Pequeños momentos, recuerdos inmensos.
+                            </p>
+
+                            <b>
+                                Ver galerías ↗
+                            </b>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- QUINCE AÑOS -->
+
+                    <div class="cat" onclick="category('quince')">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=85"
+                            alt="Celebración de quince años">
+
+                        <div class="cat-copy">
+
+                            <span>
+                                Una nueva etapa
+                            </span>
+
+                            <h3 class="serif">
+                                15 años
+                            </h3>
+
+                            <p>
+                                Una noche, una historia para siempre.
+                            </p>
+
+                            <b>
+                                Ver galerías ↗
+                            </b>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- MATRIMONIOS -->
+
+                    <div class="cat" onclick="category('bodas')">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=900&q=85"
+                            alt="Fotografía de matrimonios">
+
+                        <div class="cat-copy">
+
+                            <span>
+                                Historias de amor
+                            </span>
+
+                            <h3 class="serif">
+                                Matrimonios
+                            </h3>
+
+                            <p>
+                                La emoción de un día irrepetible.
+                            </p>
+
+                            <b>
+                                Ver galerías ↗
+                            </b>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SECCIÓN CINEMATOGRÁFICA -->
+
+            <div class="portfolio-band">
+
+                <div>
+
+                    <div class="kicker">
+                        IMÁGENES QUE CUENTAN
+                    </div>
+
+                    <h2 class="serif">
+                        No solo documentamos momentos.
+                        Contamos historias.
+                    </h2>
+
+                    <p>
+                        Fotografía y video con una mirada cuidada,
+                        narrativa y cinematográfica. Cada evento merece
+                        una galería propia, pensada para revivirlo
+                        una y otra vez.
+                    </p>
+
+                </div>
+
+                <div class="band-image"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==============================
+             PÁGINA DE CATEGORÍAS
+        =============================== -->
+
+        <section id="category" class="view">
+
+            <div class="subhero">
+
+                <button class="crumb" onclick="home()">
+                    ← Volver al inicio
+                </button>
+
+                <div class="kicker" id="catKicker">
+                    PORTAFOLIO
+                </div>
+
+                <h1 class="serif" id="catTitle">
+                    Bautizos & cumpleaños
+                </h1>
+
+                <p id="catDesc"></p>
+
+            </div>
+
+
+            <!-- EVENTOS DESTACADOS -->
+
+            <div class="event-section">
+
+                <div class="section-top">
+
+                    <div>
+
+                        <div class="kicker">
+                            HISTORIAS DESTACADAS
+                        </div>
+
+                        <h2 class="serif">
+                            Cada evento, una historia.
+                        </h2>
+
+                    </div>
+
+                    <span
+                        style="font-size:11px; color:#7b8491"
+                        id="eventCount">
+                    </span>
+
+                </div>
+
+                <div class="event-grid" id="eventGrid"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==============================
+             DETALLE DE CADA EVENTO
+        =============================== -->
+
+        <section id="detail" class="view">
+
+            <div class="detail-hero" id="detailHero">
+
+                <img id="detailCover" src="" alt="">
+
+                <div class="detail-copy">
+
+                    <button
+                        class="crumb"
+                        style="color:#dce8ff"
+                        onclick="backCategory()">
+
+                        ← Volver a la categoría
+
+                    </button>
+
+                    <div class="kicker" id="detailKicker">
+                        HISTORIA DESTACADA
+                    </div>
+
+                    <h1 class="serif" id="detailTitle"></h1>
+
+                    <p id="detailSub"></p>
+
+                </div>
+
+            </div>
+
+
+            <!-- GALERÍA FOTOGRÁFICA -->
+
+            <div class="detail-body">
+
+                <p
+                    class="detail-description"
+                    id="detailDesc">
+                </p>
+
+                <div class="section-top">
+
+                    <div>
+
+                        <div class="kicker">
+                            SELECCIÓN FOTOGRÁFICA
+                        </div>
+
+                        <h2 class="serif">
+                            Momentos de la historia
+                        </h2>
+
+                    </div>
+
+                </div>
+
+                <div class="gallery-grid" id="photoGrid"></div>
+
+
+                <!-- SECCIÓN DE VIDEO -->
+
+                <div class="video-feature">
+
+                    <div class="video-poster" id="videoPoster">
+
+                        <button class="play" onclick="videoNotice()">
+                            ▶
+                        </button>
+
+                    </div>
+
+                    <div class="video-copy">
+
+                        <div class="kicker">
+                            CINEMATOGRAFÍA
+                        </div>
+
+                        <h3 class="serif">
+                            La historia en movimiento.
+                        </h3>
+
+                        <p>
+                            Una mirada audiovisual para volver a sentir
+                            cada instante. Aquí se mostrarán los videos
+                            destacados de esta producción.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==============================
+         PIE DE PÁGINA
+    =============================== -->
+
+    <footer class="footer">
+
+        <span>
+            © LEAHJIM PRODS · AREQUIPA, PERÚ
+        </span>
+
+        <span>
+            PHOTOGRAPHY & FILM · HECHO CON INTENCIÓN
+        </span>
+
+    </footer>
+
+
+    <!-- ==============================
+         VENTANA DE ACCESO A CATEGORÍAS
+    =============================== -->
+
+    <div class="private-overlay" id="categoryModal">
+
+        <div class="private-box">
+
+            <button
+                class="close"
+                type="button"
+                aria-label="Cerrar ventana"
+                onclick="closeCategory()">
+
+                ×
+
+            </button>
+
+            <div class="kicker">
+                ACCESO A PORTAFOLIO
+            </div>
+
+            <h2 class="serif" id="categoryLockTitle">
+                Galería protegida.
+            </h2>
+
+            <p id="categoryLockText">
+                Ingresa el código que recibiste junto con tu paquete.
+            </p>
+
+            <input
+                id="categoryCode"
+                type="password"
+                inputmode="numeric"
+                placeholder="Código de acceso">
+
+            <button onclick="unlockCategory()">
+                Entrar a la carpeta
+            </button>
+
+            <p
+                id="categoryError"
+                style="color:#b34b5e; display:none">
+
+                El código no es correcto. Verifica e inténtalo nuevamente.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==============================
+         VENTANA DE GALERÍA PRIVADA
+    =============================== -->
+
+    <div class="private-overlay" id="privateModal">
+
+        <div class="private-box">
+
+            <button
+                class="close"
+                type="button"
+                aria-label="Cerrar ventana"
+                onclick="closePrivate()">
+
+                ×
+
+            </button>
+
+            <div class="kicker">
+                GALERÍA PRIVADA
+            </div>
+
+            <h2 class="serif">
+                Un recuerdo solo para ti.
+            </h2>
+
+            <p>
+                Esta galería está protegida. Ingresa el código de acceso
+                que te compartió Leahjim Prods.
+            </p>
+
+            <input
+                id="privateCode"
+                type="password"
+                placeholder="Código de acceso">
+
+            <button onclick="unlock()">
+                Ver galería
+            </button>
+
+            <p
+                id="privateError"
+                style="color:#b34b5e; display:none">
+
+                Código incorrecto. Inténtalo nuevamente.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==============================
+         JAVASCRIPT
+    =============================== -->
+
+    <script src="js/main.js" defer></script>
+
+</body>
+</html>
