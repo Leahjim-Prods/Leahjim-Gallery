@@ -216,7 +216,7 @@ const categoryCodes = {
 
     quince: '15ANOS26',
 
-    bodas: 'BODA2026'
+    #bodas: 'BODA2026'
 
 };
 
