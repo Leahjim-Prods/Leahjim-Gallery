@@ -34,6 +34,20 @@ const imgs = {
 
 };
 
+   // FOTOGRAFÍAS DE LEAH FERNANDA
+   const fotosLeah = [
+       "fotografias/01/1.jpg",
+       "fotografias/01/2.jpg",
+       "fotografias/01/3.jpg",
+       "fotografias/01/4.jpg",
+       "fotografias/01/5.jpg",
+       "fotografias/01/6.jpg",
+       "fotografias/01/7.jpg",
+       "fotografias/01/8.jpg",
+       "fotografias/01/9.jpg",
+       "fotografias/01/10.jpg",
+       "fotografias/01/11.jpg"
+   ];
 
 /* ==========================================
    2. INFORMACIÓN DE LAS CATEGORÍAS
@@ -88,9 +102,9 @@ const events = [
         client: 'Familia de Leah',
         date: 'Octubre 2026',
         type: 'Cumpleaños',
-        cover: imgs.luciana[2],
+        cover: fotosLeah[3],
         desc: 'Un día lleno de color, juegos y alegría para celebrar el primer año de Leah Fernanda.',
-        photos: imgs.luciana.slice().reverse(),
+        photos: fotosLeah,
         private: true
     },
 
