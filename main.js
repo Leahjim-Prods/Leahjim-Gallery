@@ -49,6 +49,20 @@ const imgs = {
        "fotografias/01/11.jpg"
    ];
 
+
+   const fotosJeffryMaricruz = [
+       "Boda/Jeffry y maricruz/1.jpg",
+       "Boda/Jeffry y maricruz/2.jpg",
+       "Boda/Jeffry y maricruz/3.jpg",
+       "Boda/Jeffry y maricruz/4.jpg",
+       "Boda/Jeffry y maricruz/5.jpg",
+       "Boda/Jeffry y maricruz/6.jpg",
+       "Boda/Jeffry y maricruz/7.jpg",
+       "Boda/Jeffry y maricruz/8.jpg",
+       "Boda/Jeffry y maricruz/9.jpg",
+       "Boda/Jeffry y maricruz/10.jpg"
+   ];
+
 /* ==========================================
    2. INFORMACIÓN DE LAS CATEGORÍAS
 ========================================== */
@@ -147,18 +161,23 @@ const events = [
         private: true
     },
 
-    {
-        id: 'boda-demo',
-        cat: 'bodas',
-        title: 'Juan & Ana',
-        client: 'Galería de muestra',
-        date: '2026',
-        type: 'Matrimonio',
-        cover: imgs.boda[0],
-        desc: 'Desde los preparativos hasta el último abrazo: una historia de amor contada en imágenes.',
-        photos: imgs.boda,
-        private: false
-    },
+    
+      {
+          id: 'boda-demo',
+          cat: 'bodas',
+          title: 'Jeffry & Maricruz',
+          client: 'Jeffry y Maricruz',
+          date: '2026',
+          type: 'Matrimonio',
+      
+          // FOTO 1: PORTADA EXCLUSIVA
+          cover: fotosJeffryMaricruz[0],
+      
+          desc: 'Una historia de amor contada a través de imágenes.',
+          photos: fotosJeffryMaricruz,
+          private: false
+      },
+
 
     {
         id: 'boda-sofia',
