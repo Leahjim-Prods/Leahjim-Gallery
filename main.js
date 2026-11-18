@@ -1,9 +1,10 @@
 
 /* ==========================================
-   1. FOTOGRAFÍAS DE LAS GALERÍAS
+   1. IMÁGENES DE LAS GALERÍAS
 ========================================== */
 
 const imgs = {
+
     luciana: [
         'https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=85',
         'https://images.unsplash.com/photo-1478146896981-b80fe463b330?auto=format&fit=crop&w=900&q=85',
@@ -17,6 +18,7 @@ const imgs = {
         'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=85',
         'https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?auto=format&fit=crop&w=900&q=85',
         'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=85',
+        'https://images.unsplash.com/photo-1507504031003-b417219a0nand?auto=format&fit=crop&w=900&q=85',
         'https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=900&q=85',
         'https://images.unsplash.com/photo-1530023367847-a683933f4172?auto=format&fit=crop&w=900&q=85'
     ],
@@ -29,56 +31,40 @@ const imgs = {
         'https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=900&q=85',
         'https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=900&q=85'
     ]
+
 };
 
+   // FOTOGRAFÍAS DE LEAH FERNANDA
+   const fotosLeah = [
+       "fotografias/01/1.jpg",
+       "fotografias/01/2.jpg",
+       "fotografias/01/3.jpg",
+       "fotografias/01/4.jpg",
+       "fotografias/01/5.jpg",
+       "fotografias/01/6.jpg",
+       "fotografias/01/7.jpg",
+       "fotografias/01/8.jpg",
+       "fotografias/01/9.jpg",
+       "fotografias/01/10.jpg",
+       "fotografias/01/11.jpg"
+   ];
+
+
+   const fotosJeffryMaricruz = [
+       "Boda/Jeffry y maricruz/1.jpg",
+       "Boda/Jeffry y maricruz/2.jpg",
+       "Boda/Jeffry y maricruz/3.jpg",
+       "Boda/Jeffry y maricruz/4.jpg",
+       "Boda/Jeffry y maricruz/5.jpg",
+       "Boda/Jeffry y maricruz/6.jpg",
+       "Boda/Jeffry y maricruz/7.jpg",
+       "Boda/Jeffry y maricruz/8.jpg",
+       "Boda/Jeffry y maricruz/9.jpg",
+       "Boda/Jeffry y maricruz/10.jpg"
+   ];
 
 /* ==========================================
-   2. FOTOGRAFÍAS REALES DE LEAH FERNANDA
-========================================== */
-
-const fotosLeah = [
-    'fotografias/01/1.jpg',
-    'fotografias/01/2.jpg',
-    'fotografias/01/3.jpg',
-    'fotografias/01/4.jpg',
-    'fotografias/01/5.jpg',
-    'fotografias/01/6.jpg',
-    'fotografias/01/7.jpg',
-    'fotografias/01/8.jpg',
-    'fotografias/01/9.jpg',
-    'fotografias/01/10.jpg',
-    'fotografias/01/11.jpg'
-];
-
-
-/* ==========================================
-   3. FOTOGRAFÍAS REALES DE JEFFRY Y MARICRUZ
-========================================== */
-
-/*
-   IMPORTANTE:
-   La ruta corresponde a la carpeta:
-   Boda/Jeffry y maricruz/
-
-   La foto 1 será la portada de esta galería.
-*/
-
-const fotosJeffryMaricruz = [
-    'Boda/Jeffry%20y%20maricruz/1.jpg',
-    'Boda/Jeffry%20y%20maricruz/2.jpg',
-    'Boda/Jeffry%20y%20maricruz/3.jpg',
-    'Boda/Jeffry%20y%20maricruz/4.jpg',
-    'Boda/Jeffry%20y%20maricruz/5.jpg',
-    'Boda/Jeffry%20y%20maricruz/6.jpg',
-    'Boda/Jeffry%20y%20maricruz/7.jpg',
-    'Boda/Jeffry%20y%20maricruz/8.jpg',
-    'Boda/Jeffry%20y%20maricruz/9.jpg',
-    'Boda/Jeffry%20y%20maricruz/10.jpg'
-];
-
-
-/* ==========================================
-   4. INFORMACIÓN DE LAS CATEGORÍAS
+   2. INFORMACIÓN DE LAS CATEGORÍAS
 ========================================== */
 
 const cats = {
@@ -105,12 +91,10 @@ const cats = {
 
 
 /* ==========================================
-   5. INFORMACIÓN DE LOS EVENTOS
+   3. INFORMACIÓN DE LOS EVENTOS
 ========================================== */
 
 const events = [
-
-    /* BAUTIZOS Y CUMPLEAÑOS */
 
     {
         id: 'luciana',
@@ -132,13 +116,10 @@ const events = [
         client: 'Familia de Leah',
         date: 'Octubre 2026',
         type: 'Cumpleaños',
-
-        // FOTO 4 COMO PORTADA DE LEAH
         cover: fotosLeah[3],
-
         desc: 'Un día lleno de color, juegos y alegría para celebrar el primer año de Leah Fernanda.',
         photos: fotosLeah,
-        private: false
+        private: true
     },
 
     {
@@ -153,9 +134,6 @@ const events = [
         photos: imgs.luciana,
         private: false
     },
-
-
-    /* QUINCE AÑOS */
 
     {
         id: 'quince-demo',
@@ -180,27 +158,26 @@ const events = [
         cover: imgs.quince[1],
         desc: 'Retratos editoriales para celebrar una etapa inolvidable.',
         photos: imgs.quince.slice().reverse(),
-        private: false
+        private: true
     },
 
+    
+      {
+          id: 'boda-demo',
+          cat: 'bodas',
+          title: 'Jeffry & Maricruz',
+          client: 'Jeffry y Maricruz',
+          date: '2026',
+          type: 'Matrimonio',
+      
+          // FOTO 1: PORTADA EXCLUSIVA
+          cover: fotosJeffryMaricruz[0],
+      
+          desc: 'Una historia de amor contada a través de imágenes.',
+          photos: fotosJeffryMaricruz,
+          private: false
+      },
 
-    /* MATRIMONIOS */
-
-    {
-        id: 'boda-demo',
-        cat: 'bodas',
-        title: 'Jeffry & Maricruz',
-        client: 'Jeffry y Maricruz',
-        date: '2026',
-        type: 'Matrimonio',
-
-        // FOTO 1: PORTADA EXCLUSIVA DE ESTA GALERÍA
-        cover: fotosJeffryMaricruz[0],
-
-        desc: 'Una historia de amor contada a través de imágenes.',
-        photos: fotosJeffryMaricruz,
-        private: false
-    },
 
     {
         id: 'boda-sofia',
@@ -212,23 +189,42 @@ const events = [
         cover: imgs.boda[2],
         desc: 'Una celebración elegante, cercana y llena de momentos espontáneos.',
         photos: imgs.boda.slice().reverse(),
-        private: false
+        private: true
     }
 
 ];
 
 
 /* ==========================================
-   6. VARIABLES Y REFERENCIAS DEL HTML
+   4. VARIABLES DE CONTROL
 ========================================== */
+
+let pending = null;
 
 let activeCat = 'bautizos';
 
-const get = id => document.getElementById(id);
+let pendingCategory = null;
 
 
 /* ==========================================
-   7. NAVEGACIÓN ENTRE PÁGINAS
+   5. CÓDIGOS DE ACCESO
+========================================== */
+
+const categoryCodes = {
+
+    bautizos: 'BAU2026',
+
+    quince: '15ANOS26',
+
+    bodas: 'BODA2026'
+
+};
+
+const unlockedCategories = new Set();
+
+
+/* ==========================================
+   6. NAVEGACIÓN ENTRE PÁGINAS
 ========================================== */
 
 function show(id) {
@@ -237,39 +233,56 @@ function show(id) {
         view.classList.remove('active');
     });
 
-    const target = get(id);
-
-    if (!target) return;
-
-    target.classList.add('active');
+    document.getElementById(id).classList.add('active');
 
     window.scrollTo({
         top: 0,
         behavior: 'smooth'
     });
 
-    const mobileNav = get('mobileNav');
-
-    if (mobileNav) {
-        mobileNav.style.display = 'none';
-    }
+    document.getElementById('mobileNav').style.display = 'none';
 
 }
 
 
 function home() {
+
     show('home');
+
 }
 
 
 /* ==========================================
-   8. ACCESO A LAS CATEGORÍAS
-   TODAS LAS CATEGORÍAS SON PÚBLICAS
+   7. ACCESO A LAS CATEGORÍAS
 ========================================== */
 
 function category(c) {
 
     if (!cats[c]) return;
+
+    if (!unlockedCategories.has(c)) {
+
+        pendingCategory = c;
+
+        document.getElementById('categoryLockTitle').textContent =
+            'Acceso a ' + cats[c].title + '.';
+
+        document.getElementById('categoryLockText').textContent =
+            'Esta carpeta de Leahjim Prods está protegida. Ingresa el código que recibiste con tu paquete.';
+
+        document.getElementById('categoryCode').value = '';
+
+        document.getElementById('categoryError').style.display = 'none';
+
+        document.getElementById('categoryModal').style.display = 'grid';
+
+        setTimeout(() => {
+            document.getElementById('categoryCode').focus();
+        }, 100);
+
+        return;
+
+    }
 
     renderCategory(c);
 
@@ -277,43 +290,43 @@ function category(c) {
 
 
 /* ==========================================
-   9. FUNCIONES DE CIERRE DE MODALES
+   8. CERRAR VENTANA DE CATEGORÍA
 ========================================== */
 
 function closeCategory() {
 
-    const modal = get('categoryModal');
+    document.getElementById('categoryModal').style.display = 'none';
 
-    if (modal) {
-        modal.style.display = 'none';
-    }
+    pendingCategory = null;
 
 }
 
+
+/* ==========================================
+   9. VALIDAR CÓDIGO DE CATEGORÍA
+========================================== */
 
 function unlockCategory() {
 
-    closeCategory();
+    if (
+        pendingCategory &&
+        document.getElementById('categoryCode').value.trim().toUpperCase() ===
+        categoryCodes[pendingCategory]
+    ) {
 
-    renderCategory(activeCat);
+        const c = pendingCategory;
 
-}
+        unlockedCategories.add(c);
 
+        closeCategory();
 
-function closePrivate() {
+        renderCategory(c);
 
-    const modal = get('privateModal');
+    } else {
 
-    if (modal) {
-        modal.style.display = 'none';
+        document.getElementById('categoryError').style.display = 'block';
+
     }
-
-}
-
-
-function unlock() {
-
-    closePrivate();
 
 }
 
@@ -326,73 +339,52 @@ function renderCategory(c) {
 
     activeCat = c;
 
-    const data = cats[c];
+    let d = cats[c];
 
-    if (!data) return;
+    catKicker.textContent = d.kicker;
 
-    const kicker = get('catKicker');
-    const title = get('catTitle');
-    const desc = get('catDesc');
-    const count = get('eventCount');
-    const grid = get('eventGrid');
+    catTitle.textContent = d.title;
 
-    if (kicker) {
-        kicker.textContent = data.kicker;
-    }
+    catDesc.textContent = d.desc;
 
-    if (title) {
-        title.textContent = data.title;
-    }
+    let list = events.filter(event => event.cat === c);
 
-    if (desc) {
-        desc.textContent = data.desc;
-    }
+    eventCount.textContent =
+        String(list.length).padStart(2, '0') + ' HISTORIAS';
 
-    const list = events.filter(event => event.cat === c);
+    eventGrid.innerHTML = list.map(event => `
 
-    if (count) {
-        count.textContent =
-            String(list.length).padStart(2, '0') + ' HISTORIAS';
-    }
+        <article
+            class="event-card"
+            onclick="openEvent('${event.id}')">
 
-    if (grid) {
+            <div class="event-photo">
 
-        grid.innerHTML = list.map(event => `
+                <img
+                    src="${event.cover}"
+                    alt="${event.title}">
 
-            <article
-                class="event-card"
-                onclick="openEvent('${event.id}')">
+                <span class="event-type">
+                    ${event.type}
+                </span>
 
-                <div class="event-photo">
+            </div>
 
-                    <img
-                        src="${event.cover}"
-                        alt="${event.title}"
-                        loading="lazy">
+            <div class="event-info">
 
-                    <span class="event-type">
-                        ${event.type}
-                    </span>
+                <h3 class="serif">
+                    ${event.title}
+                </h3>
 
-                </div>
+                <p>
+                    ${event.client} &nbsp;·&nbsp; ${event.date}
+                </p>
 
-                <div class="event-info">
+            </div>
 
-                    <h3 class="serif">
-                        ${event.title}
-                    </h3>
+        </article>
 
-                    <p>
-                        ${event.client} &nbsp;·&nbsp; ${event.date}
-                    </p>
-
-                </div>
-
-            </article>
-
-        `).join('');
-
-    }
+    `).join('');
 
     show('category');
 
@@ -411,97 +403,104 @@ function backCategory() {
 
 
 /* ==========================================
-   12. ABRIR UNA GALERÍA SIN CONTRASEÑA
+   12. ABRIR UNA GALERÍA
 ========================================== */
 
 function openEvent(id) {
 
-    const event = events.find(item => item.id === id);
+    let e = events.find(event => event.id === id);
 
-    if (!event) return;
+    if (e.private) {
 
-    renderEvent(event);
+        pending = e;
+
+        document.getElementById('privateCode').value = '';
+
+        document.getElementById('privateError').style.display = 'none';
+
+        document.getElementById('privateModal').style.display = 'grid';
+
+        return;
+
+    }
+
+    renderEvent(e);
 
 }
 
 
 /* ==========================================
-   13. MOSTRAR FOTOGRAFÍAS Y DETALLES
+   13. CERRAR GALERÍA PRIVADA
 ========================================== */
 
-function renderEvent(event) {
+function closePrivate() {
 
-    const cover = get('detailCover');
-    const title = get('detailTitle');
-    const sub = get('detailSub');
-    const kicker = get('detailKicker');
-    const desc = get('detailDesc');
-    const grid = get('photoGrid');
-    const videoPoster = get('videoPoster');
+    document.getElementById('privateModal').style.display = 'none';
+
+    pending = null;
+
+}
 
 
-    /* PORTADA DEL EVENTO */
+/* ==========================================
+   14. VALIDAR CÓDIGO DE GALERÍA PRIVADA
+========================================== */
 
-    if (cover) {
+function unlock() {
 
-        cover.src = event.cover;
-        cover.alt = event.title;
+    if (document.getElementById('privateCode').value === '1234') {
 
-    }
+        let e = pending;
 
+        closePrivate();
 
-    /* INFORMACIÓN DEL EVENTO */
+        renderEvent(e);
 
-    if (title) {
-        title.textContent = event.title;
-    }
+    } else {
 
-    if (sub) {
-
-        sub.textContent =
-            `${event.client} · ${event.date} · ${event.type}`;
+        document.getElementById('privateError').style.display = 'block';
 
     }
 
-    if (kicker) {
-        kicker.textContent = cats[event.cat].kicker;
-    }
-
-    if (desc) {
-        desc.textContent = event.desc;
-    }
+}
 
 
-    /* GALERÍA FOTOGRÁFICA */
+/* ==========================================
+   15. MOSTRAR FOTOGRAFÍAS Y DETALLES
+========================================== */
 
-    if (grid) {
+function renderEvent(e) {
 
-        grid.innerHTML = event.photos.map((src, index) => `
+    detailCover.src = e.cover;
 
-            <img
-                src="${src}"
-                loading="lazy"
-                alt="Fotografía ${index + 1} de ${event.title}"
-                onerror="this.style.display='none'">
+    detailTitle.textContent = e.title;
 
-        `).join('');
+    detailSub.textContent =
+        e.client + ' · ' + e.date + ' · ' + e.type;
 
-    }
+    detailKicker.textContent = cats[e.cat].kicker;
+
+    detailDesc.textContent = e.desc;
 
 
-    /* PORTADA DE VIDEO */
+    /* Galería fotográfica */
 
-    if (videoPoster) {
+    photoGrid.innerHTML = e.photos.map((src, i) => `
 
-        videoPoster.style.backgroundImage = `
+        <img
+            src="${src}"
+            loading="lazy"
+            alt="Fotografía ${i + 1} de ${e.title}">
 
-            linear-gradient(#0b111855, #0b111855),
+    `).join('');
 
-            url('${event.cover}')
 
-        `;
+    /* Portada del video */
 
-    }
+    videoPoster.style.backgroundImage = `
+        linear-gradient(#0b111855, #0b111855),
+        url('${e.cover}')
+    `;
 
     show('detail');
 
@@ -509,7 +508,7 @@ function renderEvent(event) {
 
 
 /* ==========================================
-   14. AVISO DE VIDEO
+   16. AVISO DE VIDEO
 ========================================== */
 
 function videoNotice() {
