@@ -260,7 +260,9 @@ function category(c) {
 
     if (!cats[c]) return;
 
-    if (!unlockedCategories.has(c)) {
+    /*POR SI QUIERO PONER CLAVE A LAS CARPETAS*/
+
+    /*if (!unlockedCategories.has(c)) {
 
         pendingCategory = c;
 
@@ -282,7 +284,7 @@ function category(c) {
 
         return;
 
-    }
+    }*/
 
     renderCategory(c);
 
